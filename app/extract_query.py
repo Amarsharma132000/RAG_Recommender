@@ -125,7 +125,10 @@ def analyze_job_description_for_core_details(text: str) -> JobCoreDetails | None
     except Exception as ollama_exc:
         print(f"Ollama failed or not running: {ollama_exc}. Falling back to Hugging Face API...")
         try:
-            os.environ["HF_TOKEN"] = "YOUR_API_TOKEN_HERE"
+            import os
+            hf_token = os.getenv("HF_TOKEN")
+            if not hf_token:
+                raise ValueError("HF_TOKEN environment variable not set.")
             llm = HuggingFaceEndpoint(
                 repo_id="HuggingFaceH4/zephyr-7b-beta",
                 temperature=0.01,  # Must be strictly positive for HF API

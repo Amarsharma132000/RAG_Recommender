@@ -4,7 +4,9 @@ from sentence_transformers import SentenceTransformer
 import os
 
 # Set your Hugging Face token
-os.environ["HF_TOKEN"] = "YOUR_API_TOKEN_HERE"
+hf_token = os.getenv("HF_TOKEN")
+if not hf_token:
+    raise ValueError("HF_TOKEN environment variable not set.")
 
 def load_embedding_model():
     """
