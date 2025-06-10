@@ -1,5 +1,6 @@
 evaluate.py
 eval_rag.py
+git_workflow_report.md
 .venv/
 __pycache__/
 *.py[cod]
