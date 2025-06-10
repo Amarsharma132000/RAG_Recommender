@@ -4,7 +4,7 @@ from sentence_transformers import SentenceTransformer
 import os
 
 # Set your Hugging Face token
-os.environ["HUGGINGFACEHUB_API_TOKEN"] = "REMOVED_HF_TOKEN"
+os.environ["HF_TOKEN"] = "YOUR_API_TOKEN_HERE"
 
 def load_embedding_model():
     """
