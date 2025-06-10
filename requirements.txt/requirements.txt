@@ -1,0 +1,16 @@
+streamlit
+fastapi
+uvicorn
+pandas
+faiss-cpu
+sentence-transformers
+wandb
+langchain
+langchain-core
+langchain-ollama
+beautifulsoup4
+selenium
+pydantic
+scikit-learn
+langchain_huggingface
+rank_bm25
