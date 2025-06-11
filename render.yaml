@@ -1,0 +1,22 @@
+services:
+  - type: web
+    name: rag-recommender-fastapi
+    env: docker
+    plan: free
+    buildCommand: ''
+    startCommand: ''
+    envVars:
+      - key: HF_TOKEN
+        sync: false  # Set this in the Render dashboard for security
+    autoDeploy: true
+
+  - type: web
+    name: rag-recommender-streamlit
+    env: docker
+    plan: free
+    buildCommand: ''
+    startCommand: streamlit run app/frontend/streamlit_app.py --server.port $PORT --server.address 0.0.0.0
+    envVars:
+      - key: HF_TOKEN
+        sync: false
+    autoDeploy: true
