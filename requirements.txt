@@ -14,3 +14,4 @@ pydantic
 scikit-learn
 langchain_huggingface
 rank_bm25
+tabulate
