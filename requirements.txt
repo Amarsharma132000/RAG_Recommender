@@ -1,17 +1,28 @@
-streamlit
+# Essential web frameworks
 fastapi
 uvicorn
+streamlit
+
+# Data and ML
 pandas
+scikit-learn
+numpy
 faiss-cpu
 sentence-transformers
-wandb
+rank_bm25
+
+# LLM and RAG
 langchain
 langchain-core
 langchain-ollama
+langchain_huggingface
+langchain-text-splitters
+
+# Web scraping
 beautifulsoup4
 selenium
+requests
+
+# Utilities
 pydantic
-scikit-learn
-langchain_huggingface
-rank_bm25
 tabulate

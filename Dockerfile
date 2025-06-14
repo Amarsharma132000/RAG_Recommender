@@ -1,18 +1,22 @@
-# Use official Python image
-FROM python:3.10-slim
+# Use official Python slim image
+FROM python:3.10-slim as base
 
 # Set work directory
 WORKDIR /app
 
-# Install system dependencies and clean up
-RUN apt-get update && apt-get install -y build-essential && \
-    apt-get clean && rm -rf /var/lib/apt/lists/*
+# Copy requirements.txt first for better caching
+COPY requirements.txt .
 
-# Install Python dependencies first for better caching
-COPY requirements.txt ./requirements.txt
-RUN pip install --upgrade pip && pip install -r requirements.txt
+# Install system dependencies, build tools, and Python dependencies in one layer, then clean up
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends build-essential \
+    && pip install --upgrade pip \
+    && pip install --no-cache-dir -r requirements.txt \
+    && apt-get purge -y --auto-remove build-essential \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/*
 
-# Copy only the necessary code
+# Copy the rest of the code
 COPY . .
 
 # Set permissions for the startup script
@@ -22,4 +26,4 @@ RUN chmod +x start.sh
 EXPOSE 8000 8501
 
 # Set the default command to run both servers
-CMD ["/bin/bash", "/start.sh"]
+CMD ["/bin/bash", "start.sh"]
