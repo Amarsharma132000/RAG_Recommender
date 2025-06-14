@@ -8,11 +8,3 @@ services:
         sync: false  # Set this in the Render dashboard for security
     autoDeploy: true
 
-  - type: web
-    name: rag-recommender-streamlit
-    env: docker
-    plan: free
-    envVars:
-      - key: HF_TOKEN
-        sync: false
-    autoDeploy: true
