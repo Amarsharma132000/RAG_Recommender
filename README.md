@@ -65,7 +65,7 @@ A Hugging Face account and an API token.
 
 1. Clone the Repository:
 
-git clone [https://github.com/your-username/RAG_Recommender.git](https://github.com/your-username/RAG_Recommender.git)
+git clone [https://github.com/Amarsharma132000/RAG_Recommender.git]
 cd RAG_Recommender
 
 2. Create a Virtual Environment (Recommended):
