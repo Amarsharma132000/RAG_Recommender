@@ -52,21 +52,6 @@ Presentation (streamlit_app.py):
 
 The final, ranked, and diversified list of SHL assessments is displayed to the user in a clean, interactive table in the Streamlit web app.
 
-📁 Project Structure
-.
-├── data/
-│   └── dataset.json      # Scraped assessment data.
-├── .gitignore
-├── scraper3.py             # Custom Selenium scraper for SHL data.
-├── extract_query.py        # Handles web scraping and query processing.
-├── load_model.py           # Loads the sentence-transformer model.
-├── rag_engine.py           # The core hybrid RAG engine.
-├── README.md               # This file.
-├── render.yaml             # Deployment configuration for Render.
-├── requirements.txt        # Python dependencies.
-├── streamlit_app.py        # The main Streamlit application file.
-└── utils.py                # Utility functions (FAISS index building, etc).
-
 🚀 Setup and Installation
 Follow these steps to get the project running on your local machine.
 
@@ -109,7 +94,7 @@ This project has been successfully deployed and is live on Streamlit Cloud.
 
 Streamlit Cloud (Live): The application is configured for direct deployment from the GitHub repository via Streamlit's platform.
 
-Docker/Render: The repository also includes a render.yaml for deployment on services like Render. An attempt was made to deploy on Render's free tier, but it was unsuccessful due to the final Docker image size exceeding the platform's limits for that tier.
+Docker/Render: The repository also includes a render.yaml for deployment on services like Render.
 
 🛠️ Key Dependencies
 streamlit: For creating the interactive web UI.
